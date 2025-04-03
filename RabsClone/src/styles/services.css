@@ -1,156 +1,79 @@
 .serviceweoffer {
-  padding: 50px 0;
-  background-color: #f9f9f9;
-  overflow: hidden;
+  text-align: center;
+  padding: 60px 20px;
+  background: #f5f5f5;
 }
 
 .rabs-services-heading {
-  text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 40px;
+  font-weight: bold;
   color: #333;
-  font-weight: 600;
+  margin-bottom: 40px;
 }
 
 .services-container {
-  width: 80%;
-  margin: 0 auto;
-  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
 }
 
-/* Service Container */
 .service-container {
+  width: 80%;
+  max-width: 900px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 120px auto;
-  width: 100%;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  position: relative;
-  height: 200px;
-}
-
-.service-container.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Left and Right Sections */
-.service-left,
-.service-bg {
-  position: absolute;
-  width: 50%;
-  height: 200px;
+  justify-content: space-between;
+  background: #fff;
   border-radius: 15px;
-  transition: all 0.7s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  opacity: 0;
 }
 
-/* Left Content Box */
+.service-container.even {
+  flex-direction: row-reverse;
+}
+
 .service-left {
-  background-color: #fff;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  z-index: 2;
-  padding: 25px;
-  left: 25%;
-  transform: translateX(-50%);
-}
-
-/* Icon */
-.service-icon {
-  width: 80px;
-  height: 80px;
-  margin-right: 20px;
-  object-fit: contain;
-}
-
-/* Text */
-.service-description {
   flex: 1;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #555;
-  margin: 0;
+  padding: 30px;
+  transform: translateX(-100%);
 }
 
-/* Right Background Box */
+.service-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.service-description {
+  font-size: 1rem;
+  color: #555;
+}
+
 .service-bg {
+  flex: 1;
+  height: 250px;
   background-size: cover;
   background-position: center;
-  z-index: 1;
-  overflow: hidden;
-  left: 75%;
-  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Background Overlay */
-.service-bg::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
-  z-index: 3;
-}
-
-/* Title Inside Background */
-.service-bg h2 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  font-size: 2rem;
-  font-weight: 500;
-  text-align: center;
-  width: 100%;
-  margin: 0;
-  z-index: 4;
-}
-
-/* Scroll Direction-Based Effects */
-.service-container.scrolled-down .service-left {
-  left: 48%;
-  transform: translateX(-48%);
-  z-index: 1;
-}
-
-.service-container.scrolled-down .service-bg {
-  left: 52%;
-  transform: translateX(-52%);
-  z-index: 2;
-}
-
-.service-container.scrolled-up .service-left {
-  left: 52%;
-  transform: translateX(-52%);
-  z-index: 2;
-}
-
-.service-container.scrolled-up .service-bg {
-  left: 48%;
-  transform: translateX(-48%);
-  z-index: 1;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
   .service-container {
     flex-direction: column;
-    height: auto;
+    width: 90%;
   }
 
-  .service-left,
-  .service-bg {
-    position: relative;
-    left: auto;
-    width: 100%;
+  .service-left {
+    transform: translateX(0);
   }
 }

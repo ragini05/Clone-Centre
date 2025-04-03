@@ -1,42 +1,251 @@
+/* Main section styling */
 .ourapproach {
-    position: relative;
-    text-align: center;
+  position: relative;
+  padding: 4rem 0;
+  overflow: hidden;
+  transition: background-color 0.5s ease;
+  
+}
+
+.approach-heading {
+  text-align: center;
+  font-size: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  margin-bottom: 3rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-top: 80px;
+}
+
+.highlight {
+  color: #ffd060;
+  font-weight: 700;
+}
+
+/* SVG and path styling */
+.svg-container {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.svg {
+  opacity: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#path {
+  fill: none;
+  stroke-dasharray: 5, 5;
+  animation: pathAnimation 15s linear infinite;
+}
+
+@keyframes pathAnimation {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 100;
+  }
+}
+
+/* Paper plane styling */
+#paperplane {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  z-index: 2;
+  transform-origin: 50% 50%;
+  will-change: transform;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.2));
+}
+
+/* Step section styling */
+.step-section {
+  position: relative;
+  margin: 6rem 0;
+  padding: 2rem;
+  z-index: 2;
+}
+
+.step-section h1 {
+  font-size: clamp(1.5rem, 1rem + 1.5vw, 2.25rem);
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.approach_title {
+  display: flex;
+  align-items: center;
+}
+
+.step-image {
+  max-width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.step-image:hover {
+  transform: scale(1.05);
+}
+
+.approach_para {
+  font-size: clamp(1rem, 0.8rem + 0.5vw, 1.1rem);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Step circles animation */
+.step-section:before {
+  position: absolute;
+  content: "";
+  width: 36rem;
+  height: 36rem;
+  background: rgba(0, 0, 0, 0.09);
+  z-index: 0;
+  border-radius: 100%;
+  animation: circle 10s linear infinite alternate;
+  transition: 0.5s ease-in-out;
+}
+
+#understand_vision:before {
+  left: -18rem;
+  top: 0;
+}
+
+#strategic_planning:before {
+  right: -18rem;
+  top: 0;
+}
+
+#creative:before {
+  left: -18rem;
+  top: 0;
+}
+
+#development:before {
+  right: -18rem;
+  top: 0;
+}
+
+#launch_improvement:before {
+  left: -18rem;
+  top: 0;
+}
+
+@keyframes circle {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) scale(1.05);
+  }
+  100% {
+    transform: translateY(30px) scale(0.95);
+  }
+}
+
+/* Hero down button */
+.hero-down-btn {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.arrow {
+  width: 40px;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(-7px);
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 992px) {
+  .step-section {
+    margin: 4rem 0;
+    padding: 1.5rem;
   }
   
-  .svg-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+  .step-section:before {
+    width: 20rem;
+    height: 20rem;
   }
   
-  .svg {
-    position: absolute;
-    top: 0;
-    left: 0;
+  #understand_vision:before,
+  #creative:before,
+  #launch_improvement:before {
+    left: -10rem;
   }
   
-  .svg-path {
-    stroke-dasharray: 5000;
-    stroke-dashoffset: 5000;
-    animation: draw-path 5s linear forwards;
+  #strategic_planning:before,
+  #development:before {
+    right: -10rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ourapproach {
+    padding: 3rem 1rem;
   }
   
-  @keyframes draw-path {
-    to {
-      stroke-dashoffset: 0;
-    }
+  .approach_title {
+    flex-direction: column;
   }
   
-  #paperplane {
-    position: absolute;
-    width: 50px;
-    transition: transform 0.1s linear;
+  .step-section:before {
+    width: 15rem;
+    height: 15rem;
+    opacity: 0.5;
   }
-  
-  .hero-down-btn {
-    position: relative;
-    margin-top: 50px;
+}
+
+/* Add an animated gradient effect on paragraph hover */
+.approach_para:hover {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: gradient-wave 2s ease infinite;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+@keyframes gradient-wave {
+  0% {
+    background-position: 200% 0;
   }
-  
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Enhance the highlight effect for step numbers */
+.step-section h1 {
+  position: relative;
+  display: inline-block;
+}
+
+.step-section h1:after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: #ffd060;
+  bottom: -10px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.step-section:hover h1:after {
+  width: 100px;
+}

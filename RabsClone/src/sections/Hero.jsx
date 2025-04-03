@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import '../styles/hero.css';
-import arrowIcon from '../assets/arrow.png'; // Assuming you have this image
-import whatsappIcon from '../assets/whatsapp.png'; // Assuming you have this icon
-import phoneIcon from '../assets/phone.png'; // Assuming you have this icon
+import arrowIcon from '../assets/arrow.png'; 
+import whatsappIcon from '../assets/whatsapp.png'; 
+import phoneIcon from '../assets/phone.png'; 
 import ContactForm from './ContactForm';
 
 const Hero = () => {
@@ -26,17 +26,14 @@ const Hero = () => {
         </div>
 
         <div className="hero-text">
-          <h1 className="hero-title">
-            Elevate Your Digital Presence
-          </h1>
+          <h1 className="hero-title">Elevate Your Digital Presence</h1>
           <h2 className="hero-subtitle">
-            Impactful Innovation,Seamless{" "}
-           Experiences
+            Impactful Innovation, Seamless Experiences
           </h2>
         </div>
 
         <div className="service-buttons">
-          <button className="service-btn">Wordpress Developement</button>
+          <button className="service-btn">WordPress Development</button>
           <button className="service-btn">UI - UX Design</button>
           <button className="service-btn">Real Estate CRM</button>
           <button className="service-btn">PHP & React Website</button>
@@ -60,9 +57,7 @@ const Hero = () => {
         </button>
       </div>
 
-      {showContactForm && (
-        <ContactForm onClose={closeContactForm} />
-      )}
+      {showContactForm && <ContactForm onClose={closeContactForm} />}
     </div>
   );
 };

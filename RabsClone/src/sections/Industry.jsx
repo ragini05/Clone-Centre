@@ -97,6 +97,7 @@ const Industry = () => {
             <SplideSlide key={index}>
               <div className="industry-card">
                 <div className="industry-thumb" style={{ backgroundImage: `url(${industry.image})` }}>
+                  
                   <h4 className="industry-title">{industry.title}</h4>
                 </div>
                 <div className="industry-hover">

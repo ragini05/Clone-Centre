@@ -2,8 +2,10 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: 100vh;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+   
+      
 }
 
 /* Make sure the main container takes the full viewport height */
@@ -27,6 +29,25 @@ html, body {
 /* Push content down to avoid overlapping with fixed navbar */
 .main-content {
     padding-top: 80px; /* Adjust according to navbar height */
+}
+
+.hero-section {
+    min-height: 100vh; /* Full height initially */
+    width: 100%;
+    background-image: url('../assets/Hero_Back.svg'); /* Ensure background loads */
+    background-size: cover;
+    background-position: center;
+    background-color: #334296;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+/* Prevent scrolling up above hero section */
+.scroll-lock {
+    overflow: hidden;
 }
 
 /* Sticky Footer - Stays at Bottom */

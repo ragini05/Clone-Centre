@@ -15,7 +15,8 @@ const AboutUs = () => {
         <div className="row justify-content-center">
           <div className="col-12 text-center">
             <h2>
-              About the <span className="highlight">Founders</span>
+            <span className="highlight">
+              About the Founders</span>
             </h2>
           </div>
         </div>

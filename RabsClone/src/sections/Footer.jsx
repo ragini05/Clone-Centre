@@ -3,16 +3,13 @@ import "../styles/footer.css";
 
 const Footer = () => {
   return (
-    
     <footer className="rabs-footer">
       <div className="container">
         <div className="row">
           {/* Services Section */}
           <div className="col">
-            <div>
-              <h3>Services</h3>
-              <hr className="gradient-line" />
-            </div>
+            <h3>Services</h3>
+            <hr className="gradient-line" />
             <p className="footr-linksa">
               <a href="#services">UI - UX Design</a> <br />
               <a href="#services">WordPress Development</a> <br />
@@ -26,52 +23,31 @@ const Footer = () => {
 
           {/* Office Address Section */}
           <div className="col">
-            <div>
-              <h3>Office Address</h3>
-              <hr className="gradient-line" />
-            </div>
-            <div>
-              <p>
-                <i className="fa fa-building-o"></i> Office B16, Al Kazim Building, Al Garhoud, Dubai.
-                <br />
-                <a href="tel:+971582335969">
-                  <i className="fa fa-phone"></i> +971 58 233 5969
-                </a>
-              </p>
-              <p>
-                <i className="fa fa-building-o"></i> Office 01, Pushtikar Society, Jogeshwari West, Mumbai - 102.
-                <br />
-                <a href="tel:+919833636916">
-                  <i className="fa fa-phone"></i> +91 98336 36916
-                </a>
-              </p>
-              <p>
-                <a href="mailto:support@rabsnetsolutions.com">
-                  <i className="fa fa-envelope"></i> support@rabsnetsolutions.com
-                </a>
-              </p>
-            </div>
+            <h3>Office Address</h3>
+            <hr className="gradient-line" />
+            <p>
+              📍 Office B16, Al Kazim Building, Al Garhoud, Dubai. <br />
+              📞 <a href="tel:+971582335969">+971 58 233 5969</a>
+            </p>
+            <p>
+              📍 Office 01, Pushtikar Society, Jogeshwari West, Mumbai - 102. <br />
+              📞 <a href="tel:+919833636916">+91 98336 36916</a>
+            </p>
+            <p>📧 <a href="mailto:support@rabsnetsolutions.com">support@rabsnetsolutions.com</a></p>
           </div>
 
           {/* Newsletter Section */}
           <div className="col">
-            <div>
-              <h3>Newsletter</h3>
-              <hr className="gradient-line" />
-            </div>
+            <h3>Newsletter</h3>
+            <hr className="gradient-line" />
             <form method="POST" action="footer-mail.php">
-              <input type="hidden" name="captcha" />
-              <input type="hidden" name="pname" value="Rabs Net Solutions Microsite" />
-              <input type="hidden" name="form_type" value="Newsletter Subscribe" />
               <input type="email" className="custom-footer-inputfield" placeholder="Email" name="email" required />
               <br />
               <div className="checkbox-container">
-                <input type="checkbox" id="term-conditon" name="term-conditon" value="term-conditon" required />
+                <input type="checkbox" id="term-conditon" name="term-conditon" required />
                 <label htmlFor="term-conditon">T & C Apply</label>
               </div>
-              <button type="submit" name="submit" className="custom-submitbtn-footer">
-                Submit
-              </button>
+              <button type="submit" className="custom-submitbtn-footer">Submit</button>
             </form>
             <div className="footer-social">
               <ul className="footer-social-icons">
@@ -90,13 +66,13 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Footer Section */}
+       
+
+        {/* Bottom Footer */}
         <hr />
         <div className="sub-footer">
-          <p>Copyright © 2024 RABS Net Solutions Pvt. Ltd. All Rights Reserved</p>
-          <p>
-            <a href="privacy-policy.php">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
-          </p>
+          <p>© 2024 RABS Net Solutions Pvt. Ltd. All Rights Reserved</p>
+          <p><a href="privacy-policy.php">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
         </div>
       </div>
     </footer>
