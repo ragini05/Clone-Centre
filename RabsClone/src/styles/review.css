@@ -1,0 +1,79 @@
+/* Review Section Styling */
+.review_section {
+    position: relative;
+    padding: 80px 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps the background in place */
+  }
+  
+  /* Review Title */
+  .review_section h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ededed;
+  }
+  
+  /* Subtitle */
+  .review-subtitle {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Testimonial Container */
+  .testimonial {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Testimonial Box */
+  .testimonial-box {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    max-width: 100%;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .testimonial-box:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .review_section {
+      padding: 50px 20px;
+      background-attachment: scroll; /* Fix mobile background issue */
+    }
+  
+    .testimonial-box {
+      padding: 10px;
+    }
+  }
+  
+  /* Arrow Button */
+  .hero-down-btn {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .hero-down-btn .arrow {
+    width: 40px;
+    animation: bounce 1.5s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  

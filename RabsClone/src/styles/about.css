@@ -1,0 +1,111 @@
+.about-us {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+  }
+  
+  .about-us .highlight {
+    font-weight: 700;
+    color: black;
+  }
+  
+  /* Founder Card */
+  .about-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .about-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Profile Image */
+  .about-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+  /* Name and Profile Icon */
+  .about-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  
+  .profile-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+  }
+  
+  /* Title */
+  .about-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 10px;
+  }
+  
+  /* Description */
+  .about-description {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    text-align: justify;
+  }
+  
+  /* Scroll Down Arrow */
+  .hero-down-btn {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .arrow {
+    width: 40px;
+    height: auto;
+    animation: bounce 1.5s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .about-card {
+      padding: 20px;
+    }
+  
+    .about-img {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .about-name {
+      font-size: 1rem;
+    }
+  
+    .about-title {
+      font-size: 0.9rem;
+    }
+  
+    .about-description {
+      font-size: 0.85rem;
+    }
+  }
+  

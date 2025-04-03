@@ -1,0 +1,38 @@
+/* Ensure the body takes up the full height */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Make sure the main container takes the full viewport height */
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Fix the Navbar at the top without any gap */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white; /* Adjust as needed */
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Push content down to avoid overlapping with fixed navbar */
+.main-content {
+    padding-top: 80px; /* Adjust according to navbar height */
+}
+
+/* Sticky Footer - Stays at Bottom */
+.rabs-footer {
+    margin-top: auto;
+    width: 100%;
+    background-color: white; /* Adjust as needed */
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+}

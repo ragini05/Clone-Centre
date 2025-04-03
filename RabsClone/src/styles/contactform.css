@@ -1,0 +1,179 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    z-index: 10;
+  }
+  
+  .form-container {
+    display: flex;
+    height: 100%;
+  }
+  
+  .form-left {
+    width: 40%;
+    background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .company-logo {
+    width: 150px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-heading {
+    color: #0086d3;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    line-height: 1.3;
+  }
+  
+  .enquire-btn {
+    background: linear-gradient(to right, #0086d3, #004d80);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 80%;
+  }
+  
+  .enquire-btn:hover {
+    background: linear-gradient(to right, #0077b6, #00395f);
+    transform: translateY(-2px);
+  }
+  
+  .form-right {
+    width: 60%;
+    padding: 2rem;
+  }
+  
+  .form-title {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .mobile-input input[type="tel"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus {
+    border-color: #0086d3;
+  }
+  
+  .mobile-input {
+    display: flex;
+    align-items: center;
+  }
+  
+  .country-code {
+    background-color: #f5f5f5;
+    padding: 0.8rem;
+    border-bottom: 1px solid #ccc;
+    min-width: 100px;
+    text-align: center;
+  }
+  
+  .mobile-input input {
+    flex-grow: 1;
+  }
+  
+  .checkbox {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkbox input {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    background-color: #0086d3;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0077b6;
+  }
+  
+  @media (max-width: 768px) {
+    .form-container {
+      flex-direction: column;
+    }
+    
+    .form-left, 
+    .form-right {
+      width: 100%;
+    }
+    
+    .form-left {
+      padding: 1.5rem;
+    }
+    
+    .company-logo {
+      width: 120px;
+    }
+    
+    .form-heading {
+      font-size: 1.5rem;
+    }
+  }
