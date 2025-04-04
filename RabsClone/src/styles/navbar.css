@@ -60,7 +60,7 @@ body {
 
 /* Call Section */
 .navbar-call {
-  background: #121415;
+  background: transparent;
   padding: 8px 15px;
   border-radius: 5px;
 }
@@ -68,8 +68,8 @@ body {
 .call-link {
   text-decoration: none;
   font-weight: bold;
-  color: rgb(236, 238, 239);
-  font-size: 14px;
+  color: rgb(14, 15, 15);
+  font-size: 18px;
 }
 
 .call-icon {

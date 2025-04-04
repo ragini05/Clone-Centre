@@ -24,37 +24,37 @@ const industries = [
   {
     title: "FINANCE",
     image: financeBg,
-    description: "Secure and innovative financial solutions to empower businesses and individuals alike.",
+    description: "Navigate the digital financial landscape with RABS. Our websites are financial powerhouses, combining security and sophistication to communicate trust, reliability, and financial to your clients.",
     icon: financeIcon,
   },
   {
     title: "REAL ESTATE",
     image: realEstateBg,
-    description: "Bringing real estate into the digital era with innovative and engaging platforms.",
+    description: "Build your online foundation with RABS! Our construction-focused websites don't just showcase structures; they construct digital experiences, engaging visitors with architectural precision and project excellence.",
     icon: realEstateIcon,
   },
   {
     title: "TECHNOLOGY",
     image: technologyBg,
-    description: "Pioneering technological advancements to drive innovation and efficiency worldwide.",
+    description: "Elevate your digital presence with cutting-edge websites, tailored for the tech-savvy audience. RABS crafts innovative solutions that redefine user experiences and amplify your technological prowess.",
     icon: technologyIcon,
   },
   {
     title: "EDUCATION TECHNOLOGY",
     image: educationBg,
-    description: "Empowering education with cutting-edge technology and interactive learning experiences.",
+    description: "Revolutionize education with RABS' cutting-edge EdTech solutions, redefining learning experiences for the modern world. Empower educators and learners with transformative digital tools that transcend traditional boundaries.",
     icon: educationIcon,
   },
   {
     title: "FOOD INDUSTRY",
     image: foodBg,
-    description: "Savor success online! RABS whips up visually appetizing websites for the food industry.",
+    description: "Savor success online! RABS whips up visually appetizing websites for the food industry, seamlessly blending flavors of design and functionality to leave a lasting impression on your customers.",
     icon: foodIcon,
   },
   {
     title: "TELECOMMUNICATIONS",
     image: telecomBg,
-    description: "Revolutionizing connectivity with seamless telecommunication solutions for global reach.",
+    description: "Connect with impact! RABS transforms telecommunications websites into dynamic platforms, ensuring seamless user interactions and showcasing your services with the speed and efficiency your industry demands.",
     icon: telecomIcon,
   },
 ];

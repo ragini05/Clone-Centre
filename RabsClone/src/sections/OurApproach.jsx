@@ -20,7 +20,8 @@ const OurApproach = () => {
       
       // Set initial position of plane
       const initialPoint = path.getPointAtLength(0);
-      paperplane.style.transform = `translate3d(${initialPoint.x}px, ${initialPoint.y}px, 0) rotate(5deg)`;
+      paperplane.style.transform = `translate(${initialPoint.x}px, ${initialPoint.y}px) rotate(5deg)`;
+      paperplane.style.visibility = "visible"; // Make sure the plane is visible
 
       const handleScroll = () => {
         // Update scroll position for background color effect
@@ -41,7 +42,7 @@ const OurApproach = () => {
         const angle = Math.atan2(nextPoint.y - prevPoint.y, nextPoint.x - prevPoint.x) * (180 / Math.PI);
         
         // Apply transform to move and rotate the plane
-        paperplane.style.transform = `translate3d(${point.x}px, ${point.y}px, 0) rotate(${angle}deg)`;
+        paperplane.style.transform = `translate(${point.x}px, ${point.y}px) rotate(${angle}deg)`;
       };
 
       // Initial position

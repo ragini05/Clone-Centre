@@ -18,6 +18,8 @@ const Hero = () => {
 
   return (
     <div className="hero-container">
+      <div className="background-overlay"></div>
+      
       <div className="hero-content">
         <div className="discuss-btn-container">
           <button className="discuss-btn-top" onClick={openContactForm}>

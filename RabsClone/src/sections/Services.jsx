@@ -1,6 +1,4 @@
-
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import React, { useEffect, useRef } from "react";
 import "../styles/services.css";
 
 // Import icons and background images
@@ -74,48 +72,84 @@ const servicesData = [
 ];
 
 const Services = () => {
+  const serviceRefs = useRef([]);
+  const observerRef = useRef(null);
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "-25% 0px", 
+      threshold: 0.15,
+    };
+
+    observerRef.current = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Add the animating class first for smoother transition
+          entry.target.classList.add("animating");
+          
+          // Use setTimeout to add active class after a slight delay
+          setTimeout(() => {
+            entry.target.classList.add("active");
+            entry.target.classList.remove("inactive");
+          }, 50);
+        } else {
+          // For exiting the viewport, first remove active and add exiting
+          entry.target.classList.remove("active");
+          entry.target.classList.add("exiting");
+          
+          // Then after animation duration, add inactive and remove exiting
+          setTimeout(() => {
+            entry.target.classList.add("inactive");
+            entry.target.classList.remove("exiting", "animating");
+          }, 1000); // Half of the animation duration
+        }
+      });
+    }, observerOptions);
+
+    serviceRefs.current.forEach((ref) => {
+      if (ref) {
+        observerRef.current.observe(ref);
+        // Add initial inactive class
+        ref.classList.add("inactive");
+      }
+    });
+
+    return () => {
+      if (observerRef.current) {
+        serviceRefs.current.forEach((ref) => {
+          if (ref) observerRef.current.unobserve(ref);
+        });
+      }
+    };
+  }, []);
+
   return (
     <section className="serviceweoffer" id="services">
       <h1 className="rabs-services-heading">Services We Offer</h1>
       <div className="services-container">
-        {servicesData.map((service, index) => {
-          const ref = useRef(null);
-          const isInView = useInView(ref, { threshold: 0.2, triggerOnce: true });
-
-          return (
-            <motion.div
-              ref={ref}
-              className={`service-container ${index % 2 === 0 ? "even" : "odd"}`}
-              key={index}
-              initial={{ opacity: 0, y: 100 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+        {servicesData.map((service, index) => (
+          <div
+            className="service-container"
+            key={index}
+            ref={(el) => (serviceRefs.current[index] = el)}
+          >
+            <div className="service-left">
+              <img
+                src={service.icon}
+                alt={service.title}
+                className="service-icon"
+              />
+              <p className="service-description">{service.description}</p>
+            </div>
+            <div
+              className="service-bg"
+              style={{ backgroundImage: `url(${service.bgImage})` }}
             >
-              <motion.div
-                className="service-left"
-                initial={{ x: "-100%" }}
-                animate={isInView ? { x: "0%" } : {}}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-              >
-                <img
-                  src={service.icon}
-                  alt={service.title}
-                  className="service-icon"
-                />
-                <p className="service-description">{service.description}</p>
-              </motion.div>
-              <motion.div
-                className="service-bg"
-                style={{ backgroundImage: `url(${service.bgImage})` }}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.8, delay: index * 0.3 }}
-              >
-                <h2>{service.title}</h2>
-              </motion.div>
-            </motion.div>
-          );
-        })}
+              <h2>{service.title}</h2>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
